@@ -1,0 +1,13 @@
+[Unit]
+Description=GPIO Auto Test Service
+After=multi-user.target
+Requires=gpio-driver.service
+
+[Service]
+ExecStart=/usr/bin/gpio-test
+StandardOutput=file:/var/log/gpio-test.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

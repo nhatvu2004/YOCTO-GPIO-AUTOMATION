@@ -1,0 +1,11 @@
+[Unit]
+Description=GPIO Driver Service
+Before=gpio-test.service
+
+[Service]
+ExecStart=/sbin/modprobe gpio-driver
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
